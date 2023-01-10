@@ -259,3 +259,21 @@
   new PureCounter();
 
 })()
+
+guessNumber = () => {
+  let message = document.getElementById('numberMessage');
+  let userNumber = Number(document.getElementById('number1to5').value);
+  let randomNbr = Number(Math.ceil((Math.random() * 10)/2));
+  console.log('Random Number: ' + randomNbr)
+  console.log('User Number: ' + userNumber)
+
+  if(userNumber === randomNbr){
+      message.textContent = `You picked ${userNumber}?! You're a mind reader!`;
+  }
+  else if (userNumber - randomNbr === 1 || randomNbr - userNumber === 1){
+      message.textContent = `So close! The cpu picked ${randomNbr}.`
+  }
+  else {
+      message.textContent = `Wrong! The cpu chose ${randomNbr}`;
+  }
+} 
